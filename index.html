@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Loja de Peças</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Menu horizontal estilizado -->
+    <nav class="horizontal-menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="https://wa.me/5515991470649">Vendedor</a></li>
+            <li><a href="login.html">Admin</a></li>
+            <li><a href="https://www.instagram.com/calango_iphones/">Instagram</a></li>
+            <li><a href="https://maps.app.goo.gl/aDw2cHrQHWRATLGL7">Localização 📍</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <img src="logo.png" alt="Logo da Loja" class="logo">
+        <h2>Produtos Disponíveis</h2>
+
+        <!-- Lista de Produtos -->
+        <div id="shop" class="product-list">
+            <!-- Produtos vão ser carregados aqui -->
+        </div>
+    </div>
+
+    <script>
+        // Função para carregar produtos do localStorage
+        function loadProducts() {
+            let products = JSON.parse(localStorage.getItem('products')) || [];
+            const shop = document.getElementById('shop');
+            shop.innerHTML = ''; // Limpar o conteúdo antes de carregar
+            products.forEach((product) => {
+                if (product.visible) {
+                    const productDiv = document.createElement('div');
+                    productDiv.classList.add('product');
+                    productDiv.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <p>Preço: R$${product.price}</p>
+                        <button class="btn-saber-mais">Saber Mais</button>
+                    `;
+                    shop.appendChild(productDiv);
+                }
+            });
+        }
+
+        // Carregar os produtos ao iniciar a página
+        loadProducts();
+    </script>
+</body>
+</html>

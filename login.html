@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Painel de Administração</title>
+    <link rel="stylesheet" href="mainadm.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Login do Administrador</h1>
+
+        <!-- Formulário de Login -->
+        <div class="login-panel">
+            <input type="text" id="username" placeholder="Usuário">
+            <input type="password" id="password" placeholder="Senha">
+            <button onclick="login()">Login</button>
+            <p id="error-message" style="color: red;"></p>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            // Credenciais fixas para o exemplo (usuário e senha)
+            const adminUsername = "1";
+            const adminPassword = "1";
+
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+
+            // Verificação de login
+            if (username === adminUsername && password === adminPassword) {
+                // Redirecionar para o painel de administração após login bem-sucedido
+                localStorage.setItem('adminLoggedIn', 'true');
+                window.location.href = 'admin.html';
+            } else {
+                document.getElementById('error-message').textContent = 'Usuário ou senha incorretos.';
+            }
+        }
+    </script>
+</body>
+</html>

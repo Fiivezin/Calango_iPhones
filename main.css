@@ -1,0 +1,103 @@
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 30%;
+    height: auto; /* Ajusta a altura automaticamente para manter a proporção */
+}
+body {
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    background: rgb(235,152,72);
+    background: linear-gradient(0deg, rgba(235,152,72,1) 0%, rgba(253,187,45,1) 68%);
+}
+
+/* Menu horizontal estilizado */
+.horizontal-menu {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+.horizontal-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.horizontal-menu ul li {
+    margin: 0 15px;
+}
+.horizontal-menu ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+.horizontal-menu ul li a:hover {
+    background-color: #575757;
+}
+
+/* Estilo da loja e produtos */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+h2 {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.product {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(25% - 40px); /* Quatro colunas */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+.product img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.product h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+.product p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Botão Saber Mais */
+.btn-saber-mais {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.btn-saber-mais:hover {
+    background-color: #218838;
+}
